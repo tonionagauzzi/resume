@@ -1,0 +1,243 @@
+/* ========================================
+   Web履歴書 — 長内健作
+   ======================================== */
+
+/* Reset & Base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #111827;
+  background: #ffffff;
+}
+
+/* Container */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  padding: 48px 0 24px;
+  border-bottom: 2px solid #374151;
+}
+
+.header__name {
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+}
+
+.header__title {
+  color: #6b7280;
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+.header__date {
+  color: #9ca3af;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+/* Links */
+.links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  padding: 16px 0;
+  border-bottom: 1px solid #e5e7eb;
+  flex-wrap: wrap;
+}
+
+.links__link {
+  color: #374151;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.links__link:hover {
+  text-decoration: underline;
+}
+
+/* Section */
+.section {
+  padding: 32px 0;
+}
+
+.section__heading {
+  font-size: 18px;
+  font-weight: bold;
+  color: #374151;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid #374151;
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+}
+
+/* Summary */
+.summary__text {
+  color: #6b7280;
+  font-size: 15px;
+}
+
+/* Career Timeline */
+.career-item {
+  --career-border-color: #d1d5db;
+  border-left: 3px solid var(--career-border-color);
+  padding-left: 20px;
+  margin-bottom: 28px;
+}
+
+.career-item:last-child {
+  margin-bottom: 0;
+}
+
+.career-item--current {
+  --career-border-color: #374151;
+}
+
+.career-item--mid {
+  --career-border-color: #9ca3af;
+}
+
+.career-item--old {
+  --career-border-color: #d1d5db;
+}
+
+.career-item__company {
+  font-size: 17px;
+  font-weight: bold;
+  color: #111827;
+}
+
+.career-item__period {
+  color: #6b7280;
+  font-size: 13px;
+  margin: 4px 0 10px;
+}
+
+.career-item__description {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.career-item__placeholder {
+  color: #9ca3af;
+  font-style: italic;
+  font-size: 14px;
+}
+
+/* Skills */
+.skills {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.skill-tag {
+  background: #f3f4f6;
+  color: #374151;
+  padding: 6px 18px;
+  border-radius: 20px;
+  font-size: 14px;
+  border: 1px solid #d1d5db;
+}
+
+.skill-tag--highlight {
+  background: #374151;
+  color: #ffffff;
+  border-color: #374151;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 24px 0;
+  border-top: 1px solid #e5e7eb;
+  color: #9ca3af;
+  font-size: 12px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .header {
+    padding: 32px 0 20px;
+  }
+
+  .header__name {
+    font-size: 24px;
+  }
+
+  .links {
+    gap: 16px;
+  }
+
+  .section {
+    padding: 24px 0;
+  }
+}
+
+/* Print */
+@media print {
+  body {
+    font-size: 12px;
+    background: none;
+  }
+
+  .container {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .header {
+    padding: 16px 0;
+  }
+
+  .links__link {
+    color: #111827;
+  }
+
+  .links__link::after {
+    content: " (" attr(href) ")";
+    font-size: 10px;
+    color: #6b7280;
+  }
+
+  .skill-tag {
+    border: 1px solid #374151;
+    background: none;
+  }
+
+  .skill-tag--highlight {
+    background: #374151;
+    color: #ffffff;
+  }
+
+  .section {
+    padding: 16px 0;
+  }
+
+  .career-item {
+    break-inside: avoid;
+  }
+
+  .skills {
+    break-inside: avoid;
+  }
+
+  .footer {
+    font-size: 10px;
+  }
+}
