@@ -128,17 +128,6 @@ body {
   margin: 4px 0 10px;
 }
 
-.career-item__description {
-  color: #6b7280;
-  font-size: 14px;
-}
-
-.career-item__placeholder {
-  color: #9ca3af;
-  font-style: italic;
-  font-size: 14px;
-}
-
 /* Skills */
 .skills {
   display: flex;
